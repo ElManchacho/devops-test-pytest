@@ -3,6 +3,8 @@ from src.customclass.RoomClass import *
 def test_roomCreation():
     newRoom = Room(5,2,4)
 
+    assert newRoom.roomNumber == 5
+
 def test_roomReservation():
     newRoom = Room(5,2,4)
 
