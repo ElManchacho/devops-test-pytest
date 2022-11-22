@@ -1,15 +1,32 @@
 pipeline {
-  agent any
-  stages {
-    stage('version') {
-      steps {
-        sh 'python3 --version'
-      }
+    agent any
+
+    tools {
+        nodejs "node"
     }
-    stage('hello') {
-      steps {
-        sh 'python3 hello.py'
-      }
+
+    stages {
+
+        stage('Go into Angular project') {
+          steps {
+            sh 'cd test-angular-project'
+          }
+        }
+
+        stage('Git checkout') {
+            steps {
+                git branch: 'main', url: 'https://github.com/ElManchacho/FilebeatToCloud.git'
+            }
+        }
+        stage('NPM install') {
+            steps {
+                sh 'npm install'
+            }
+        }
+        stage('NPM test') {
+            steps {
+                sh 'npm start'
+            }
+        }
     }
-  }
 }
