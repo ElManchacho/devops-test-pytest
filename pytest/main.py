@@ -1,7 +1,7 @@
 import atexit
-from script.cacheFlush import cacheFlush
-from script.customclass.cacheFlushClass import cacheFlushClass
-from script.customclass.RoomClass import *
+from src.cacheFlush import cacheFlush
+from src.customclass.cacheFlushClass import cacheFlushClass
+from src.customclass.RoomClass import *
 
 if __name__ == "__main__":
 
